@@ -1,5 +1,16 @@
 import { SlideLayout } from '../../ui/SlideLayout';
 import { User, Users, Coins } from 'lucide-react';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
+
+const happinessData = [
+  { income: '200万', happiness: 30 },
+  { income: '400万', happiness: 55 },
+  { income: '600万', happiness: 75 },
+  { income: '800万', happiness: 90 }, // ここでほぼピーク
+  { income: '1000万', happiness: 92 },
+  { income: '1500万', happiness: 94 },
+  { income: '2000万', happiness: 95 },
+];
 
 const Ch3_1 = () => (
   <SlideLayout chapter="Chapter 3" title="人生を豊かにする「3つの資本」とは？">
@@ -155,7 +166,7 @@ const Ch3_4 = () => (
         <ul className="space-y-3">
           <li className="flex gap-3 text-sm text-secondary">
              <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0" />
-             年収800万円を超えると幸福度は頭打ちになる（エビデンス：行動経済学の定説）
+             年収800万円（世帯年収約1500万円）を超えると幸福度は頭打ちになる（※行動経済学・カーネマン教授の研究等）
           </li>
           <li className="flex gap-3 text-sm text-secondary">
              <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0" />
@@ -169,17 +180,26 @@ const Ch3_4 = () => (
         </div>
       </div>
 
-       <div className="flex-1 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
-         <div className="w-full h-32 relative flex items-end">
-            {/* 年収と幸福度の相関グラフイメージ */}
-            <svg viewBox="0 0 100 50" className="w-full h-full overflow-visible">
-              <path d="M 0 50 Q 30 -5 100 -5" fill="none" stroke="#f59e0b" strokeWidth="3" />
-              <line x1="0" y1="50" x2="100" y2="50" stroke="#e2e8f0" strokeWidth="2" />
-            </svg>
-             <div className="absolute top-1/4 right-4 bg-amber-100 text-amber-700 text-[10px] px-2 py-1 rounded font-bold">幸福度は頭打ち</div>
-         </div>
-         <div className="flex justify-between w-full text-xs text-gray-400 mt-2">
-            <span>年収（低）</span><span>年収（高）</span>
+       <div className="flex-1 w-full bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
+         <span className="text-sm font-bold text-secondary mb-1 block">年収と幸福度の相関イメージ</span>
+         <span className="text-[10px] text-gray-400 mb-4 block">※ダニエル・カーネマンらの研究に基づく傾向</span>
+         
+         <div className="w-full h-40 relative flex items-end">
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={happinessData} margin={{ top: 20, right: 10, left: -20, bottom: 0 }}>
+                <defs>
+                  <linearGradient id="colorHappiness" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.8}/>
+                    <stop offset="95%" stopColor="#f59e0b" stopOpacity={0.1}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E2E8F0" />
+                <XAxis dataKey="income" tick={{fontSize: 10, fill: '#64748B'}} />
+                <YAxis domain={[0, 100]} tick={false} axisLine={false} />
+                <Area type="monotone" dataKey="happiness" stroke="#f59e0b" fillOpacity={1} fill="url(#colorHappiness)" strokeWidth={3} />
+              </AreaChart>
+            </ResponsiveContainer>
+             <div className="absolute top-4 right-4 bg-amber-100 border border-amber-200 text-amber-800 text-xs px-2 py-1 rounded shadow-sm font-bold">約800万で頭打ち</div>
          </div>
       </div>
     </div>

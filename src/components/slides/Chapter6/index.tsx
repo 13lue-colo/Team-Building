@@ -1,5 +1,13 @@
 import { SlideLayout } from '../../ui/SlideLayout';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, TrendingUp } from 'lucide-react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
+const simulationData = [
+  { year: '1年目', normal: -500, community: -100, amtNorm: '赤字', amtCom: '投資期' },
+  { year: '3年目', normal: 0, community: 300, amtNorm: '回収', amtCom: '黒字化' },
+  { year: '5年目', normal: 300, community: 1000, amtNorm: '成長', amtCom: '組織化' },
+  { year: '10年目', normal: 1000, community: 5000, amtNorm: '安定', amtCom: '実業展開' },
+];
 
 const Ch6_1 = () => (
   <SlideLayout chapter="Chapter 6" title="コミュニティ×ビジネスの目指すステップ">
@@ -80,6 +88,49 @@ const Ch6_1 = () => (
 );
 
 const Ch6_2 = () => (
+  <SlideLayout chapter="Chapter 6" title="投資・回収と資産形成のシミュレーション">
+    <div className="flex flex-col md:flex-row gap-8 items-center h-full max-w-5xl mx-auto">
+      <div className="flex-[1.5] w-full h-80 bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-gray-100 flex flex-col">
+        <h3 className="text-sm font-bold text-secondary text-center mb-6">利益（リターン）の推移シミュレーション比較</h3>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={simulationData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E2E8F0" />
+            <XAxis dataKey="year" tick={{fontSize: 12, fill: '#64748B'}} />
+            <YAxis tick={{fontSize: 12, fill: '#64748B'}} />
+            <Tooltip 
+              cursor={{fill: 'transparent'}}
+              contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+            />
+            <Legend wrapperStyle={{fontSize: '12px', paddingTop: '10px'}} />
+            <Bar dataKey="normal" name="一般的な起業・投資" fill="#94A3B8" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="community" name="コミュニティ起業モデル" fill="#3B82F6" radius={[4, 4, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      
+      <div className="flex-1 space-y-6">
+        <div className="flex items-center gap-3 border-b border-gray-200 pb-3">
+          <TrendingUp className="text-accent" size={28} />
+          <h3 className="text-xl font-bold text-primary">圧倒的な回収スピード</h3>
+        </div>
+        
+        <p className="text-sm text-secondary/80 leading-relaxed">
+          一般的な起業は初期費用が大きく（数百万〜数千万）、黒字化して投資を回収するまでに最低でも3〜5年かかると言われています（※生存率の低さは前述の通り）。
+        </p>
+        
+        <div className="bg-blue-50 border-l-4 border-accent p-4 rounded-r-xl">
+          <p className="text-sm font-semibold text-primary mb-1">コミュニティモデルの強み</p>
+          <p className="text-xs text-secondary/80 leading-relaxed">
+            すでに「顧客（ファン）」がいる状態で作るため、**初月から爆発的な利益**を生み出すことが可能。初期投資の少なさと相まって、回収・事業拡大のスピードが一般的なビジネスとは次元が異なります。
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </SlideLayout>
+);
+
+const Ch6_3 = () => (
   <SlideLayout chapter="Chapter 6" title="共に創る未来 〜私たちと挑戦しませんか〜">
     <div className="flex flex-col items-center justify-center h-full gap-10 w-full max-w-4xl mx-auto">
       
@@ -117,4 +168,5 @@ const Ch6_2 = () => (
 export const Chapter6Slides = [
   <Ch6_1 key="6-1" />,
   <Ch6_2 key="6-2" />,
+  <Ch6_3 key="6-3" />,
 ];

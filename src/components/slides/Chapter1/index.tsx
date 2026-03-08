@@ -1,5 +1,29 @@
 import { SlideLayout } from '../../ui/SlideLayout';
 import { Coins, Clock, AlertTriangle, Lightbulb } from 'lucide-react';
+import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+
+// 追加エビデンスデータ
+const wageData = [
+  { year: '1990', value: 100 },
+  { year: '1995', value: 104.2 },
+  { year: '2000', value: 105.1 },
+  { year: '2005', value: 101.8 },
+  { year: '2010', value: 98.4 },
+  { year: '2015', value: 95.8 },
+  { year: '2020', value: 95.1 },
+  { year: '2023', value: 92.8 },
+];
+
+const taxBurdenData = [
+  { year: '1970', value: 24.3 },
+  { year: '1980', value: 30.5 },
+  { year: '1990', value: 38.4 },
+  { year: '2000', value: 36.0 },
+  { year: '2010', value: 37.2 },
+  { year: '2015', value: 42.8 },
+  { year: '2020', value: 47.9 },
+  { year: '2023', value: 46.1 }, // 財務省データ等に基づく近似値推移
+];
 
 const Ch1_1 = () => (
   <SlideLayout chapter="Chapter 1" title="日本の現状①：上がらない給与と物価高">
@@ -13,16 +37,24 @@ const Ch1_1 = () => (
           <p className="text-sm font-semibold text-red-700">【事実】一生懸命働いても、生活が楽にならない構造的な理由がここにあります。</p>
         </div>
       </div>
-      <div className="flex-1 bg-slate-50 rounded-2xl p-6 border border-gray-100 flex flex-col items-center justify-center h-full min-h-[300px] w-full">
-        {/* ダミーグラフ表現 */}
-        <span className="text-xs text-gray-400 mb-4">※エビデンスイメージ：実質賃金の推移グラフ</span>
-        <div className="flex items-end gap-2 w-full h-40 border-b border-l border-gray-300 p-2">
-          {[80, 75, 78, 70, 65, 60, 55, 50].map((h, i) => (
-            <div key={i} className="flex-1 bg-red-300 rounded-t-sm" style={{ height: `${h}%` }}></div>
-          ))}
+      <div className="flex-1 bg-white rounded-2xl p-6 border border-gray-100 flex flex-col items-center justify-center h-full min-h-[300px] w-full shadow-sm">
+        <div className="text-center mb-4">
+          <span className="text-sm font-bold text-secondary block">実質賃金指数の推移（1990年=100とした場合）</span>
+          <span className="text-xs text-gray-400">※厚生労働省 毎月勤労統計調査等を元にした推移イメージ</span>
         </div>
-        <div className="flex justify-between w-full mt-2 text-xs text-gray-500">
-          <span>過去</span><span>現在</span>
+        <div className="w-full h-48">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={wageData} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E2E8F0" />
+              <XAxis dataKey="year" tick={{fontSize: 12, fill: '#64748B'}} tickMargin={10} />
+              <YAxis domain={['auto', 'auto']} tick={{fontSize: 12, fill: '#64748B'}} />
+              <Tooltip 
+                contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                labelStyle={{ fontWeight: 'bold', color: '#334155' }}
+              />
+              <Line type="monotone" dataKey="value" stroke="#EF4444" strokeWidth={3} dot={{ r: 4, strokeWidth: 2 }} activeDot={{ r: 6 }} name="実質賃金指数" />
+            </LineChart>
+          </ResponsiveContainer>
         </div>
       </div>
     </div>
@@ -31,16 +63,31 @@ const Ch1_1 = () => (
 
 const Ch1_2 = () => (
   <SlideLayout chapter="Chapter 1" title="日本の現状②：可処分所得の圧迫">
-    <div className="flex flex-col md:flex-row gap-8 items-center h-full">
-      <div className="flex-1 bg-slate-50 rounded-2xl p-6 border border-gray-100 flex flex-col items-center justify-center h-full min-h-[300px] w-full">
-         <span className="text-xs text-gray-400 mb-4">※エビデンスイメージ：国民負担率の推移グラフ</span>
-         <div className="flex items-end gap-2 w-full h-40 border-b border-l border-gray-300 p-2">
-          {[40, 42, 43, 45, 46, 47, 48, 49].map((h, i) => (
-            <div key={i} className="flex-1 bg-blue-300 rounded-t-sm" style={{ height: `${h}%` }}></div>
-          ))}
+    <div className="flex flex-col md:flex-row-reverse gap-8 items-center h-full">
+      <div className="flex-1 bg-white rounded-2xl p-6 border border-gray-100 flex flex-col items-center justify-center h-full min-h-[300px] w-full shadow-sm">
+         <div className="text-center mb-4">
+          <span className="text-sm font-bold text-secondary block">国民負担率の推移（％）</span>
+          <span className="text-xs text-gray-400">※財務省「国民負担率の推移」データを元にした推移イメージ</span>
         </div>
-        <div className="flex justify-between w-full mt-2 text-xs text-gray-500">
-          <span>過去</span><span>現在 (約47%)</span>
+        <div className="w-full h-48">
+          <ResponsiveContainer width="100%" height="100%">
+            <AreaChart data={taxBurdenData} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
+              <defs>
+                <linearGradient id="colorBurden" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.8}/>
+                  <stop offset="95%" stopColor="#3B82F6" stopOpacity={0.1}/>
+                </linearGradient>
+              </defs>
+              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E2E8F0" />
+              <XAxis dataKey="year" tick={{fontSize: 12, fill: '#64748B'}} tickMargin={10} />
+              <YAxis domain={[0, 50]} tick={{fontSize: 12, fill: '#64748B'}} />
+              <Tooltip 
+                contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                labelStyle={{ fontWeight: 'bold', color: '#334155' }}
+              />
+              <Area type="monotone" dataKey="value" stroke="#3B82F6" fillOpacity={1} fill="url(#colorBurden)" name="国民負担率(%)" strokeWidth={2} />
+            </AreaChart>
+          </ResponsiveContainer>
         </div>
       </div>
       <div className="flex-1 space-y-4">
@@ -49,7 +96,7 @@ const Ch1_2 = () => (
           <h3 className="text-2xl font-bold text-primary">手取りは増えにくい時代</h3>
         </div>
         <p className="text-secondary/80 leading-relaxed text-sm mb-4">
-          税金や社会保険料などの「国民負担率」は年々上昇し、現在は約40%後半で推移しています。<br/>給与総額が増えても「手取り（可処分所得）」はそれに比例して増えません。
+          税金や社会保険料などの「国民負担率」は年々上昇し、現在は約46%〜47%で推移しています。<br/>給与総額（額面）が増えても「手取り（可処分所得）」はそれに比例して増えません。
         </p>
         <p className="text-sm font-semibold text-primary">
           ▶︎ これまでの<span className="text-accent">「会社に依存していれば安心」</span>という常識は、既に通用しないフェーズに入っています。
