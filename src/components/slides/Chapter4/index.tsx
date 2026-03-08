@@ -1,5 +1,5 @@
 import { SlideLayout } from '../../ui/SlideLayout';
-import { Building2, Users } from 'lucide-react';
+import { Building2, Users, ArrowRight, ShieldCheck, BarChart3, Zap } from 'lucide-react';
 
 const Ch4_1 = () => (
   <SlideLayout chapter="Chapter 4" title="不労所得・資産形成への「4つの道」">

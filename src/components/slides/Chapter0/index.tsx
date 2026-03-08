@@ -1,5 +1,5 @@
 import { SlideLayout } from '../../ui/SlideLayout';
-import { Network, Goal, Hand } from 'lucide-react';
+import { Network, Hand } from 'lucide-react';
 
 const TitleSlide = () => (
   <SlideLayout bgColor="bg-slate-50">
