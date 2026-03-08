@@ -14,35 +14,35 @@ const happinessData = [
 
 const Ch3_1 = () => (
   <SlideLayout chapter="Chapter 3" title="人生を豊かにする「3つの資本」とは？">
-    <div className="flex flex-col items-center justify-center h-full text-center gap-8">
-      <p className="text-xl text-secondary/80 leading-relaxed font-medium">
-        私たちが100年時代を生き抜くために必要な資産は<br />
-        大きく分けて<strong className="text-accent text-2xl mx-1">3つ</strong>あります。
+    <div className="flex flex-col items-center justify-center h-full text-center gap-6 sm:gap-8">
+      <p className="text-base sm:text-lg md:text-xl text-secondary/80 leading-relaxed font-medium">
+        私たちが100年時代を生き抜くために必要な資産は<br className="hidden sm:block" />
+        大きく分けて<strong className="text-accent text-xl sm:text-2xl mx-1">3つ</strong>あります。
       </p>
 
-      <div className="flex flex-wrap justify-center gap-6 mt-4">
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 flex flex-col items-center w-64">
-          <div className="w-16 h-16 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center mb-4">
-            <User size={32} />
+      <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6 mt-2 sm:mt-4 w-full">
+        <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-blue-100 flex flex-col items-center w-full sm:w-64">
+          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+            <User size={28} className="sm:w-8 sm:h-8" />
           </div>
-          <h3 className="text-lg font-bold text-primary mb-2">人的資本</h3>
-          <span className="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">自分自身（スキル・健康）</span>
+          <h3 className="text-base sm:text-lg font-bold text-primary mb-1 sm:mb-2">人的資本</h3>
+          <span className="text-[10px] sm:text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">自分自身（スキル・健康）</span>
         </div>
         
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-green-100 flex flex-col items-center w-64">
-          <div className="w-16 h-16 bg-green-50 text-green-500 rounded-full flex items-center justify-center mb-4">
-            <Users size={32} />
+        <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-green-100 flex flex-col items-center w-full sm:w-64">
+          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-50 text-green-500 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+            <Users size={28} className="sm:w-8 sm:h-8" />
           </div>
-          <h3 className="text-lg font-bold text-primary mb-2">社会資本</h3>
-          <span className="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">つながり（人脈・信頼）</span>
+          <h3 className="text-base sm:text-lg font-bold text-primary mb-1 sm:mb-2">社会資本</h3>
+          <span className="text-[10px] sm:text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">つながり（人脈・信頼）</span>
         </div>
 
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-amber-100 flex flex-col items-center w-64">
-          <div className="w-16 h-16 bg-amber-50 text-amber-500 rounded-full flex items-center justify-center mb-4">
-            <Coins size={32} />
+        <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-amber-100 flex flex-col items-center w-full sm:w-64">
+          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-amber-50 text-amber-500 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+            <Coins size={28} className="sm:w-8 sm:h-8" />
           </div>
-          <h3 className="text-lg font-bold text-primary mb-2">金融資本</h3>
-          <span className="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">お金（収入・資産）</span>
+          <h3 className="text-base sm:text-lg font-bold text-primary mb-1 sm:mb-2">金融資本</h3>
+          <span className="text-[10px] sm:text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">お金（収入・資産）</span>
         </div>
       </div>
       
@@ -56,8 +56,8 @@ const Ch3_1 = () => (
 
 const Ch3_2 = () => (
   <SlideLayout chapter="Chapter 3" title="人的資本（自分自身という資産）">
-    <div className="flex flex-col md:flex-row gap-8 h-full items-center">
-      <div className="flex-[2] space-y-6">
+    <div className="flex flex-col md:flex-row gap-6 md:gap-8 h-full items-center">
+      <div className="flex-[2] space-y-4 md:space-y-6">
         <div className="flex items-center gap-4 border-b border-gray-100 pb-4">
           <div className="bg-blue-50 p-4 rounded-xl text-blue-600"><User size={32}/></div>
           <div>
@@ -107,9 +107,9 @@ const Ch3_2 = () => (
 
 const Ch3_3 = () => (
   <SlideLayout chapter="Chapter 3" title="社会資本（つながりから生まれる資産）">
-    <div className="flex flex-col md:flex-row gap-8 h-full items-center">
-      <div className="flex-1 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center">
-        <div className="w-full h-48 relative flex items-center justify-center">
+    <div className="flex flex-col md:flex-row gap-6 md:gap-8 h-full items-center">
+      <div className="flex-1 w-full bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center">
+        <div className="w-full h-32 sm:h-48 relative flex items-center justify-center">
           <div className="absolute inset-0 bg-green-50/50 rounded-full blur-2xl" />
           <Users size={80} className="text-green-500 relative z-10" />
           {/* 本来はネットワークツリー等の図解を入れる */}
@@ -247,16 +247,16 @@ const Ch3_5 = () => (
                <span className="font-bold text-green-700">社会資本（仲間・信頼）</span>
             </div>
             <span className="text-accent font-bold text-2xl">＝</span>
-            <div className="bg-gradient-to-br from-amber-100 to-yellow-200 p-4 rounded-xl border border-amber-200 flex-1 text-center w-full relative shadow-sm transform scale-105">
+            <div className="bg-gradient-to-br from-amber-100 to-yellow-200 p-3 sm:p-4 rounded-xl border border-amber-200 flex-1 text-center w-full relative shadow-sm transform scale-100 md:scale-105">
                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm">結果</span>
-               <span className="text-xs text-amber-600 block mb-1">Step 3</span>
-               <span className="font-bold text-amber-900">金融資本（大きな富）</span>
+               <span className="text-[10px] sm:text-xs text-amber-600 block mb-1">Step 3</span>
+               <span className="font-bold text-amber-900 text-sm sm:text-base">金融資本（大きな富）</span>
             </div>
          </div>
       </div>
 
-       <p className="text-center font-bold text-primary mt-4">
-         「自分自身を磨き（人的）」、そして「仲間と信頼を築く（社会）」。<br/>
+       <p className="text-center font-bold text-primary mt-2 sm:mt-4 text-xs sm:text-base">
+         「自分自身を磨き（人的）」、そして「仲間と信頼を築く（社会）」。<br className="hidden sm:block"/>
          その強固なプラットフォームがあって初めて、<span className="text-accent">圧倒的かつ持続的な結果（金融）</span>が生まれます。
        </p>
 

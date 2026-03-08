@@ -3,10 +3,10 @@ import { Layers, Target, HandHeart, ChevronRight } from 'lucide-react';
 
 const Ch5_1 = () => (
   <SlideLayout chapter="Chapter 5" title="ビジネスの真髄「何をやるか」ではなく「誰がやるか」">
-    <div className="flex flex-col items-center justify-center h-full text-center gap-8">
+    <div className="flex flex-col items-center justify-center h-full text-center gap-6 sm:gap-8">
       
-      <p className="text-xl md:text-2xl font-bold text-primary leading-relaxed bg-slate-50 border border-slate-100 p-8 rounded-2xl w-full max-w-4xl shadow-sm">
-        どんなに優れた「仕組み（ビジネスモデル）」があっても、<br/>
+      <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary leading-relaxed bg-slate-50 border border-slate-100 p-6 sm:p-8 rounded-2xl w-full max-w-4xl shadow-sm">
+        どんなに優れた「仕組み（ビジネスモデル）」があっても、<br className="hidden sm:block"/>
         そこに命を吹き込むのは最終的に<span className="text-accent underline decoration-2 underline-offset-4 mx-1">「使う人」</span>です。
       </p>
       
@@ -35,12 +35,12 @@ const Ch5_1 = () => (
 
 const Ch5_2 = () => (
   <SlideLayout chapter="Chapter 5" title="四重の輪（Be → Do → Have）">
-    <div className="flex flex-col items-center justify-center h-full gap-8">
-      <div className="flex-1 bg-slate-50 w-full max-w-4xl rounded-2xl p-8 border border-gray-100 flex flex-col items-center justify-center relative">
-        <h3 className="font-bold text-lg text-secondary mb-8 text-center bg-white px-6 py-2 rounded-full border border-gray-200">結果や成果は、全て自分の内側の反映である</h3>
+    <div className="flex flex-col items-center justify-center h-full gap-6 sm:gap-8">
+      <div className="flex-1 bg-slate-50 w-full max-w-4xl rounded-2xl p-4 sm:p-8 border border-gray-100 flex flex-col items-center justify-center relative">
+        <h3 className="font-bold text-sm sm:text-lg text-secondary mb-6 sm:mb-8 text-center bg-white px-4 sm:px-6 py-2 rounded-full border border-gray-200">結果や成果は、全て自分の内側の反映である</h3>
         
         {/* 同心円の図解 */}
-        <div className="relative w-full aspect-square max-w-[320px] flex items-center justify-center -mt-4">
+        <div className="relative w-full aspect-square max-w-[280px] sm:max-w-[320px] flex items-center justify-center -mt-2 sm:-mt-4">
           
           {/* Layer 4: 結果・成果 (Have) */}
           <div className="absolute inset-0 border-[3px] border-slate-200 rounded-full flex items-center justify-center bg-white shadow-sm transition-transform hover:scale-[1.02]">

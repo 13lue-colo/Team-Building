@@ -3,38 +3,38 @@ import { SlideLayout } from '../../ui/SlideLayout';
 const Ch2_1 = () => (
   <SlideLayout chapter="Chapter 2" title="この世の働き方は4つに分かれる">
     <div className="flex flex-col items-center justify-center h-full gap-8">
-      <div className="relative w-full max-w-2xl aspect-video bg-white rounded-3xl shadow-sm border border-gray-100 flex flex-col p-8">
+      <div className="relative w-full max-w-2xl aspect-square md:aspect-video bg-white rounded-2xl md:rounded-3xl shadow-sm border border-gray-100 flex flex-col p-4 md:p-8">
         
         {/* 十字線 */}
         <div className="absolute top-1/2 left-0 w-full h-[2px] bg-slate-200 -translate-y-1/2"></div>
         <div className="absolute left-1/2 top-0 w-[2px] h-full bg-slate-200 -translate-x-1/2"></div>
         
         {/* 左上 E */}
-        <div className="absolute top-0 left-0 w-1/2 h-1/2 flex flex-col items-center justify-center p-4">
-          <div className="text-6xl font-black text-blue-500 opacity-90 mb-2">E</div>
-          <p className="text-sm font-bold text-slate-500 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded">Employee</p>
-          <span className="text-xs text-slate-400 mt-1">従業員</span>
+        <div className="absolute top-0 left-0 w-1/2 h-1/2 flex flex-col items-center justify-center p-2 text-center">
+          <div className="text-3xl md:text-6xl font-black text-blue-500 opacity-90 mb-1 md:mb-2">E</div>
+          <p className="text-[10px] md:text-sm font-bold text-slate-500 uppercase tracking-widest bg-blue-50 px-2 py-0.5 md:px-3 md:py-1 rounded text-center leading-tight">Employee</p>
+          <span className="text-[10px] md:text-xs text-slate-400 mt-1">従業員</span>
         </div>
         
         {/* 左下 S */}
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 flex flex-col items-center justify-center p-4">
-          <div className="text-6xl font-black text-green-500 opacity-90 mb-2">S</div>
-          <p className="text-sm font-bold text-slate-500 uppercase tracking-widest bg-green-50 px-3 py-1 rounded">Self-Employed</p>
-          <span className="text-xs text-slate-400 mt-1">自営業</span>
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 flex flex-col items-center justify-center p-2 text-center">
+          <div className="text-3xl md:text-6xl font-black text-green-500 opacity-90 mb-1 md:mb-2">S</div>
+          <p className="text-[10px] md:text-sm font-bold text-slate-500 uppercase tracking-widest bg-green-50 px-2 py-0.5 md:px-3 md:py-1 rounded text-center leading-tight">Self-Employed</p>
+          <span className="text-[10px] md:text-xs text-slate-400 mt-1">自営業</span>
         </div>
 
         {/* 右上 B */}
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 flex flex-col items-center justify-center p-4">
-          <div className="text-6xl font-black text-accent opacity-90 mb-2">B</div>
-          <p className="text-sm font-bold text-slate-500 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded">Business Owner</p>
-          <span className="text-xs text-slate-400 mt-1">ビジネスオーナー</span>
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 flex flex-col items-center justify-center p-2 text-center">
+          <div className="text-3xl md:text-6xl font-black text-accent opacity-90 mb-1 md:mb-2">B</div>
+          <p className="text-[10px] md:text-sm font-bold text-slate-500 uppercase tracking-widest bg-blue-50 px-2 py-0.5 md:px-3 md:py-1 rounded text-center leading-tight">Business Owner</p>
+          <span className="text-[10px] md:text-xs text-slate-400 mt-1">ビジネスオーナー</span>
         </div>
 
         {/* 右下 I */}
-        <div className="absolute bottom-0 right-0 w-1/2 h-1/2 flex flex-col items-center justify-center p-4">
-          <div className="text-6xl font-black text-purple-500 opacity-90 mb-2">I</div>
-          <p className="text-sm font-bold text-slate-500 uppercase tracking-widest bg-purple-50 px-3 py-1 rounded">Investor</p>
-          <span className="text-xs text-slate-400 mt-1">投資家</span>
+        <div className="absolute bottom-0 right-0 w-1/2 h-1/2 flex flex-col items-center justify-center p-2 text-center">
+          <div className="text-3xl md:text-6xl font-black text-purple-500 opacity-90 mb-1 md:mb-2">I</div>
+          <p className="text-[10px] md:text-sm font-bold text-slate-500 uppercase tracking-widest bg-purple-50 px-2 py-0.5 md:px-3 md:py-1 rounded text-center leading-tight">Investor</p>
+          <span className="text-[10px] md:text-xs text-slate-400 mt-1">投資家</span>
         </div>
 
       </div>

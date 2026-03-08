@@ -137,9 +137,9 @@ const Ch1_3 = () => (
 
 const Ch1_4 = () => (
   <SlideLayout chapter="Chapter 1" title="時間の枯渇：切り売りの罠">
-     <div className="flex flex-col md:flex-row gap-10 items-center justify-center h-full w-full">
-      <div className="w-48 h-48 bg-orange-50 rounded-full flex items-center justify-center shrink-0">
-        <Clock size={80} className="text-orange-400" />
+     <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center justify-center h-full w-full">
+      <div className="w-32 h-32 md:w-48 md:h-48 bg-orange-50 rounded-full flex items-center justify-center shrink-0">
+        <Clock size={48} className="text-orange-400 md:w-[80px] md:h-[80px]" />
       </div>
       <div className="flex flex-col gap-6 max-w-xl">
         <h3 className="text-2xl font-bold text-primary">残業・副業による「時間」の切り売り</h3>
@@ -200,14 +200,14 @@ const Ch1_6 = () => (
         <Lightbulb size={48} className="text-yellow-500" />
       </div>
       
-      <h2 className="text-3xl md:text-5xl font-bold text-primary leading-tight">
-        あなたの<span className="text-accent mx-2">「努力不足」</span>ではありません。
+      <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-primary leading-tight mt-4">
+        あなたの<span className="text-accent mx-1 sm:mx-2">「努力不足」</span>ではありません。
       </h2>
       
-      <p className="text-xl text-secondary/80 max-w-2xl leading-relaxed font-medium">
-        どれだけ優秀で、どれだけ一生懸命働いても、<br/>
-        <strong className="text-red-500 mx-1 border-b-2 border-red-500">「構造（システム）」</strong>が原因で頭打ちになるのであれば、<br/>
-        変えるべきは<strong className="text-accent mx-1 text-2xl">「戦う場所（構造）」</strong>です。
+      <p className="text-base sm:text-xl text-secondary/80 max-w-2xl leading-relaxed font-medium">
+        どれだけ優秀で、どれだけ一生懸命働いても、<br className="hidden sm:block" />
+        <strong className="text-red-500 mx-1 border-b-2 border-red-500">「構造（システム）」</strong>が原因で頭打ちになるのであれば、<br className="hidden sm:block" />
+        変えるべきは<strong className="text-accent mx-1 text-xl sm:text-2xl">「戦う場所（構造）」</strong>です。
       </p>
 
     </div>

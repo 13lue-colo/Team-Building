@@ -7,10 +7,10 @@ interface SlideProps {
 
 export const Slide: React.FC<SlideProps> = ({ children }) => {
   return (
-    <div className="w-full h-screen bg-background text-primary flex flex-col justify-center items-center px-16 py-12 overflow-hidden relative font-sans">
+    <div className="w-full h-[100dvh] bg-background text-primary flex flex-col justify-center items-center px-4 py-8 sm:px-8 md:px-12 lg:px-16 lg:py-12 overflow-hidden relative font-sans">
       {/* 共通のヘッダー・フッターや装飾をここに入れることができる */}
       {/* {children} を実際のコンテンツとする */}
-      <div className="w-full max-w-[1200px] h-full flex flex-col justify-center gap-8 relative z-10">
+      <div className="w-full max-w-[1200px] h-full flex flex-col justify-center gap-4 sm:gap-8 relative z-10 min-h-0">
         {children}
       </div>
       
@@ -48,15 +48,16 @@ export const Presentation: React.FC<PresentationProps> = ({ slides }) => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slides.length]);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-background select-none">
+    <div className="relative w-full h-[100dvh] overflow-hidden bg-background select-none">
       {/* スライドコンテンツ */}
       {slides[currentSlide]}
 
       {/* ナビゲーション UI */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full shadow-sm border border-gray-100 z-50">
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 sm:gap-4 bg-white/90 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-sm border border-gray-100 z-50">
         <button
           onClick={prevSlide}
           disabled={currentSlide === 0}
@@ -79,8 +80,8 @@ export const Presentation: React.FC<PresentationProps> = ({ slides }) => {
       </div>
 
       {/* メニューやロゴ等 */}
-      <div className="absolute top-6 left-8 z-50">
-        <div className="flex items-center gap-2 text-secondary/50 font-semibold tracking-wider text-sm">
+      <div className="absolute top-4 sm:top-6 left-4 sm:left-8 z-50">
+        <div className="flex items-center gap-2 text-secondary/50 font-semibold tracking-wider text-xs sm:text-sm">
           <span>コミュニティ × ビジネス</span>
         </div>
       </div>

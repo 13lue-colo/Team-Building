@@ -16,7 +16,7 @@ export const SlideLayout: React.FC<SlideLayoutProps> = ({
   className = '',
 }) => {
   return (
-    <div className={`flex flex-col h-full animate-fade-in gap-8 p-10 md:p-12 lg:p-16 rounded-3xl shadow-xl border border-gray-100 ${bgColor} relative overflow-hidden ${className}`}>
+    <div className={`flex flex-col h-full animate-fade-in gap-4 sm:gap-6 md:gap-8 p-6 sm:p-8 md:p-10 lg:p-16 rounded-2xl sm:rounded-3xl shadow-xl border border-gray-100 ${bgColor} relative overflow-y-auto lg:overflow-hidden ${className}`}>
       {/* 共通背景の微細な装飾 */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       
@@ -30,7 +30,7 @@ export const SlideLayout: React.FC<SlideLayoutProps> = ({
           )}
           {title && (
             <div className="flex items-center gap-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary tracking-tight leading-tight">
                 {title}
               </h2>
             </div>

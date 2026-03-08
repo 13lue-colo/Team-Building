@@ -17,9 +17,9 @@ const Ch6_1 = () => (
         私たちは「仲間づくり」から始まり、最終的に完全な資産収入（不動産・株）を手にするまでの<br/>明確なロードマップを用意しています。
       </p>
 
-      {/* 階段図解（右肩上がりのリボン型） */}
-      <div className="w-full max-w-4xl relative mt-16 mb-24 h-[400px] mx-auto">
-        
+      {/* 階段図解（右肩上がりのリボン型：スマホ対応として横スクロールを導入） */}
+      <div className="w-full max-w-4xl relative mt-4 md:mt-16 mb-4 md:mb-24 h-[400px] overflow-x-auto overflow-y-hidden mx-auto custom-scrollbar pb-6">
+        <div className="min-w-[700px] h-full relative">
         {/* 背景の矢印 */}
         <div className="absolute inset-0 z-0 pl-10 pr-4 pt-10 pb-20 pointer-events-none opacity-40">
           <svg viewBox="0 0 100 100" className="w-full h-full" preserveAspectRatio="none">
@@ -84,14 +84,15 @@ const Ch6_1 = () => (
 
       </div>
     </div>
-  </SlideLayout>
+  </div>
+</SlideLayout>
 );
 
 const Ch6_2 = () => (
   <SlideLayout chapter="Chapter 6" title="投資・回収と資産形成のシミュレーション">
-    <div className="flex flex-col md:flex-row gap-8 items-center h-full max-w-5xl mx-auto">
-      <div className="flex-[1.5] w-full h-80 bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-gray-100 flex flex-col">
-        <h3 className="text-sm font-bold text-secondary text-center mb-6">利益（リターン）の推移シミュレーション比較</h3>
+    <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center h-full max-w-5xl mx-auto">
+      <div className="flex-[1.5] w-full h-64 md:h-80 bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-gray-100 flex flex-col">
+        <h3 className="text-sm font-bold text-secondary text-center mb-4 md:mb-6">利益（リターン）の推移シミュレーション比較</h3>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={simulationData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E2E8F0" />
@@ -132,9 +133,9 @@ const Ch6_2 = () => (
 
 const Ch6_3 = () => (
   <SlideLayout chapter="Chapter 6" title="共に創る未来 〜私たちと挑戦しませんか〜">
-    <div className="flex flex-col items-center justify-center h-full gap-10 w-full max-w-4xl mx-auto">
+    <div className="flex flex-col items-center justify-center h-full gap-6 md:gap-10 w-full max-w-4xl mx-auto">
       
-       <div className="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 w-full relative overflow-hidden text-center flex flex-col items-center gap-6">
+       <div className="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-gray-100 w-full relative overflow-hidden text-center flex flex-col items-center gap-6">
          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-blue-600"></div>
          <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
          

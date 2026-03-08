@@ -13,8 +13,8 @@ const subMarketData = [
 
 const Ch4_1 = () => (
   <SlideLayout chapter="Chapter 4" title="不労所得・資産形成への「4つの道」">
-    <div className="flex flex-col h-full items-center justify-center gap-10">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full max-w-5xl">
+    <div className="flex flex-col h-full items-center justify-center gap-6 sm:gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl">
         {/* 1. 不動産 */}
         <div className="bg-slate-50 p-6 rounded-2xl border border-gray-200 flex flex-col items-center text-center opacity-70">
           <div className="w-16 h-16 bg-white border border-gray-200 rounded-full flex items-center justify-center mb-4">1</div>
@@ -54,9 +54,9 @@ const Ch4_1 = () => (
       </div>
 
       <div className="text-center max-w-2xl mt-4">
-        <p className="text-primary font-medium">
-          持たざる者（凡人）がBクワドラント（真の資産家）へ向かうためには、<br/>
-          堅実に<span className="text-accent text-lg font-bold mx-1 border-b-2 border-accent">「ビジネス・起業」</span>を選ぶことが唯一の近道です。
+        <p className="text-primary font-medium text-sm sm:text-base">
+          持たざる者（凡人）がBクワドラント（真の資産家）へ向かうためには、<br className="hidden sm:block"/>
+          堅実に<span className="text-accent text-base sm:text-lg font-bold mx-1 border-b-2 border-accent">「ビジネス・起業」</span>を選ぶことが唯一の近道です。
         </p>
       </div>
     </div>
@@ -153,15 +153,15 @@ const Ch4_2 = () => (
       </div>
       
       {/* 新設：市場成長のエビデンス */}
-      <div className="w-full flex-shrink-0 mt-6 bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col md:flex-row items-center gap-6 max-w-5xl mx-auto h-[160px] relative z-10">
+      <div className="w-full flex-shrink-0 mt-6 bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col md:flex-row items-center gap-4 md:gap-6 max-w-5xl mx-auto md:h-[160px] relative z-10">
         <div className="flex-1">
            <h4 className="text-sm font-bold text-primary mb-1">【エビデンス】 なぜ「ファン（継続的関係）」が最強なのか？</h4>
-           <p className="text-xs text-secondary/80 leading-relaxed">
+           <p className="text-[10px] sm:text-xs text-secondary/80 leading-relaxed">
              国内のサブスクリプション（定額・継続課金）市場は右肩上がりで成長を続けており、推計1.5兆円規模に達します。
              これは<strong>「都度売り」から「継続的な関係性（コミュニティ）」へのビジネスのパラダイムシフト</strong>が起きている証拠です。
            </p>
         </div>
-        <div className="w-[300px] h-full flex flex-col bg-slate-50 rounded-lg p-2 border border-slate-100">
+        <div className="w-full md:w-[300px] h-32 md:h-full flex flex-col bg-slate-50 rounded-lg p-2 border border-slate-100">
           <span className="text-[10px] text-gray-500 text-center font-bold mb-1">国内サブスクリプション市場規模推移（億円）</span>
           <div className="flex-1 w-full">
             <ResponsiveContainer width="100%" height="100%">
@@ -184,14 +184,14 @@ const Ch4_3 = () => (
   <SlideLayout chapter="Chapter 4" title="すでに顧客がいるということの価値">
     <div className="flex flex-col items-center justify-center h-full gap-8">
       
-      <p className="text-xl text-primary font-medium text-center">
-        世の中のビジネスにおける最大の障壁は<br/>
+      <p className="text-lg sm:text-xl text-primary font-medium text-center leading-relaxed">
+        世の中のビジネスにおける最大の障壁は<br />
         <strong className="text-red-500 font-bold border-b-2 border-red-500 pb-1">「認知ゼロからの集客」</strong>です。
       </p>
       
-      <div className="w-full max-w-4xl bg-white rounded-3xl p-8 border border-gray-100 shadow-sm mt-4 relative overflow-hidden">
+      <div className="w-full max-w-4xl bg-white rounded-3xl p-6 sm:p-8 border border-gray-100 shadow-sm mt-4 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-400 to-accent"></div>
-        <h3 className="text-lg font-bold text-primary mb-6 flex items-center gap-2">
+        <h3 className="text-base sm:text-lg font-bold text-primary mb-4 sm:mb-6 flex items-center gap-2">
           <Zap className="text-yellow-500 fill-yellow-500" />
           コミュニティ主体のエコシステムの強み
         </h3>
