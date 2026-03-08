@@ -1,4 +1,3 @@
-import React from 'react';
 import { TrendingDown, Clock, AlertTriangle } from 'lucide-react';
 
 const Chapter1 = () => {

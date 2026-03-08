@@ -1,4 +1,3 @@
-import React from 'react';
 import { User, Users, Coins } from 'lucide-react';
 
 const Chapter3 = () => {

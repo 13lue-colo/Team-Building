@@ -1,6 +1,5 @@
-import React from 'react';
 import { SlideLayout } from '../../ui/SlideLayout';
-import { TrendingDown, Coins, Clock, AlertTriangle, Lightbulb } from 'lucide-react';
+import {, Coins, Clock, AlertTriangle, Lightbulb } from 'lucide-react';
 
 const Ch1_1 = () => (
   <SlideLayout chapter="Chapter 1" title="日本の現状①：上がらない給与と物価高">

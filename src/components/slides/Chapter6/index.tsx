@@ -1,4 +1,3 @@
-import React from 'react';
 import { SlideLayout } from '../../ui/SlideLayout';
 import { CheckCircle2 } from 'lucide-react';
 

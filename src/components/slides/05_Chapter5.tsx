@@ -1,4 +1,3 @@
-import React from 'react';
 import { Target, Heart, Footprints, Medal } from 'lucide-react';
 
 const Chapter5 = () => {

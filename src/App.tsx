@@ -1,4 +1,3 @@
-import React from 'react';
 import { Presentation, Slide } from './components/ui/Presentation';
 
 // 各Chapterのスライド配列をインポート

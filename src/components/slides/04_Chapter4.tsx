@@ -1,4 +1,3 @@
-import React from 'react';
 import { Building2, Users, Store, BarChart3, ArrowRight } from 'lucide-react';
 
 const Chapter4 = () => {

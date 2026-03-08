@@ -1,4 +1,3 @@
-import React from 'react';
 import { SlideLayout } from '../../ui/SlideLayout';
 import { Network, Goal, Hand } from 'lucide-react';
 
